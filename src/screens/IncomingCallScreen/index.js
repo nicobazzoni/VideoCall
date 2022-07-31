@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, Pressable } from 'react-native'
 import React from 'react'
 import bg from '../../../assets/images/iosbg.jpeg'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -7,6 +7,11 @@ import Feather from 'react-native-vector-icons/Feather'
 
 
 const IncomingCallScreen = () => {
+
+    const onDecline = () => {
+        console.warn("on Decline")
+    }
+    const onAccept = () => { console.warn("on Accept") }
   return (
     
         <ImageBackground source={bg} style={styles.bg} resizeMode="cover">
@@ -27,21 +32,24 @@ const IncomingCallScreen = () => {
         </View>
 
         <View style={styles.row} > 
-        <View style={styles.iconContainer} >
+        {/* decline button */}
+        <Pressable onPress={onDecline} style={styles.iconContainer} >
             <View style={styles.iconButtonContainer} >
         <Feather name="x" size={30} color={'white'}/>
             </View>
             
             <Text style={styles.iconText} >Decline</Text>
-        </View>
-        <View style={styles.iconContainer} >
+        </Pressable>
+        {/* accept button */}
+        <Pressable onPress={onAccept} style={styles.iconContainer}>
             <View style={[styles.iconButtonContainer, {backgroundColor: '#2e7bff'}]} >
             <Feather name="check" size={30} color={'white'}/>
             </View>
 
             <Text style={styles.iconText} >Accept</Text>
+            </Pressable>
          </View>
-        </View>
+        
       </ImageBackground>
   
 
