@@ -14,14 +14,16 @@ import { NavigationContainer } from '@react-navigation/native'
   import CallingScreen from './src/screens/CallingScreen';
  import IncomingCallScreen from './src/screens/IncomingCallScreen';
 import CallScreen from './src/screens/CallScreen';
-
+import LoginScreen from './src/screens/LoginScreen'
 import Navigation from './src/navigation/';
+
+
 const App = () => {
 
  return (
     <>
       <StatusBar barStyle={ 'dark-content'} />
-      <Navigation />
+      <LoginScreen/>
     </>
   );
 };
