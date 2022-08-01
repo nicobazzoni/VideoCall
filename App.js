@@ -23,7 +23,7 @@ const App = () => {
  return (
     <>
       <StatusBar barStyle={ 'dark-content'} />
-      <LoginScreen/>
+      <Navigation/>
     </>
   );
 };
